@@ -18,7 +18,7 @@ class Alert(BaseModel):
 
 
 class AlertsResponse(BaseModel):
-    """Top-level alerts response."""
+    """Top-level alerts response model."""
 
     alerts: List[Alert]
     count: int
