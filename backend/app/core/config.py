@@ -14,6 +14,7 @@ class Settings:
 
     ENV: str = os.getenv("ENV", "development")
     APP_NAME: str = os.getenv("APP_NAME", "Air Quality Monitor API")
+    APP_VERSION: str = os.getenv("APP_VERSION", "1.0.0")
     HOST: str = os.getenv("HOST", "127.0.0.1")
     PORT: int = int(os.getenv("PORT", "8000"))
     OPENAQ_API_KEY: str = os.getenv("OPENAQ_API_KEY", "")
