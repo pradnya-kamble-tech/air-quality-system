@@ -114,3 +114,29 @@ def generate_daily_insight(
         return f"🟠 Unhealthy air quality in several cities. {worst.get('city', 'A city')} is most affected — take precautions."
     else:
         return f"🔴 Dangerous pollution levels detected. {worst.get('city', 'A city')} reporting very unhealthy conditions. Stay safe."
+
+
+def generate_forecast_insight(forecast_values: List[float], method: str) -> str:
+    """Summarize the ML forecast trend in a human-friendly way."""
+    if not forecast_values or len(forecast_values) < 2:
+        return "Not enough data for trend analysis."
+
+    start = forecast_values[0]
+    end = forecast_values[-1]
+    diff = end - start
+
+    trend = "stable"
+    if diff > 10:
+        trend = "trending upward 📈"
+    elif diff < -10:
+        trend = "trending downward 📉"
+
+    if "ARIMA" in method:
+        model_name = "ARIMA model"
+    elif "Smoothing" in method:
+        model_name = "Exponential Smoothing"
+    else:
+        model_name = "Heuristic model"
+
+    return f"The {model_name} detects levels are {trend} over the next 6 hours."
+

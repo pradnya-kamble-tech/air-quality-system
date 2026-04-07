@@ -19,3 +19,12 @@ export async function fetchAlerts() {
     const response = await api.get("/api/alerts");
     return response.data;
 }
+
+export async function fetchHistory(city, pollutant, hours = 72) {
+    const params = {};
+    if (city) params.city = city;
+    if (pollutant) params.pollutant = pollutant;
+    if (hours) params.hours = hours;
+    const response = await api.get("/api/history", { params });
+    return response.data;
+}

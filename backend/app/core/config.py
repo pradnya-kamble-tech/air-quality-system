@@ -17,6 +17,7 @@ class Settings:
     HOST: str = os.getenv("HOST", "127.0.0.1")
     PORT: int = int(os.getenv("PORT", "8000"))
     OPENAQ_API_KEY: str = os.getenv("OPENAQ_API_KEY", "")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./air_quality.db")
 
 
 settings = Settings()

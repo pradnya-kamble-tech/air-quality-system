@@ -32,4 +32,6 @@ class PredictionsResponse(BaseModel):
 
     data: List[CityPrediction]
     horizon_hours: int = 6
-    method: str = "Weighted Moving Average (Mean-Reversion)"
+    method: str = "ARIMA / Exponential Smoothing"
+    insight: str = ""
+

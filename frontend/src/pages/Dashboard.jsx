@@ -8,6 +8,7 @@ import ForecastChart from "../components/ForecastChart";
 import AlertBanner from "../components/AlertBanner";
 import AlertPanel from "../components/AlertPanel";
 import HeroSection from "../components/HeroSection";
+import HistoryChart from "../components/HistoryChart";
 
 const REFRESH_INTERVAL = 30_000;
 
@@ -35,7 +36,7 @@ export default function Dashboard() {
             ]);
             setData(aqResult.data || []);
             setDailyInsight(aqResult.daily_insight || "");
-            setPredictions(predResult.data || []);
+            setPredictions(predResult || { data: [], insight: "" });
             setAlerts(alertResult.alerts || []);
             setError(null);
             setLastUpdate(new Date());
@@ -168,6 +169,9 @@ export default function Dashboard() {
 
                 {/* ═══ Forecast ═══ */}
                 <ForecastChart predictions={predictions} selectedCity={selectedCity} />
+
+                {/* ═══ History ═══ */}
+                <HistoryChart cities={cities} selectedCity={selectedCity} />
 
                 {/* ═══ Station Cards ═══ */}
                 <section className="dashboard-section">
