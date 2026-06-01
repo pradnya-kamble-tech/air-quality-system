@@ -1,4 +1,4 @@
-# 🌍 Air Quality Monitor & Prediction System
+🌍 Air Quality Monitor & Prediction System
 
 Real-time air quality monitoring and prediction system focused on **India**.
 
