@@ -18,6 +18,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
+
 ## API Endpoints
 
 | Method | Path      | Description                      |
@@ -26,6 +27,8 @@ uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 | GET    | `/health` | Health check with region info    |
 | GET    | `/docs`   | Swagger UI (auto-generated)      |
 | GET    | `/redoc`  | ReDoc (auto-generated)           |
+
+
 
 ## Running Tests
 
